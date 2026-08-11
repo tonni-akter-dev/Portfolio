@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tonni Akter — Senior MERN Stack Developer</title>
+<meta name="description" content="Tonni Akter — Senior MERN Stack Developer. React, Next.js, Node.js, Express, MongoDB. Full-stack web applications, shipped end to end.">
+<meta name="keywords" content="MERN Stack Developer, React Developer, Node.js Developer, Full Stack Developer, Next.js Developer, MongoDB Developer, Freelance Web Developer">
+<meta name="author" content="Tonni Akter">
+<link rel="canonical" href="https://tonni-akter-dev.github.io/Portfolio-App/">
+
+<!-- Open Graph / Facebook / LinkedIn -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tonni-akter-dev.github.io/Portfolio-App/">
+<meta property="og:title" content="Tonni Akter — Senior MERN Stack Developer">
+<meta property="og:description" content="Full-stack web applications built on React, Next.js, Node.js, Express, and MongoDB. Shipped end to end for clients across agency, fintech, logistics, and travel.">
+<meta property="og:image" content="https://tonni-akter-dev.github.io/Portfolio-App/images/og-cover.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https://tonni-akter-dev.github.io/Portfolio-App/">
+<meta name="twitter:title" content="Tonni Akter — Senior MERN Stack Developer">
+<meta name="twitter:description" content="Full-stack web applications built on React, Next.js, Node.js, Express, and MongoDB.">
+<meta name="twitter:image" content="https://tonni-akter-dev.github.io/Portfolio-App/images/og-cover.jpg">
+
+<!-- Structured data: Person / ProfilePage -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Tonni Akter",
+  "jobTitle": "Senior MERN Stack Developer",
+  "url": "https://tonni-akter-dev.github.io/Portfolio-App/",
+  "email": "mailto:tonniakterbithi@gmail.com",
+  "sameAs": [
+    "https://github.com/tonni-akter-dev",
+    "https://www.linkedin.com/in/tonni-akter-dev/"
+  ],
+  "knowsAbout": [
+    "React.js", "Next.js", "Node.js", "Express.js", "MongoDB",
+    "TypeScript", "REST API Development", "GraphQL", "Docker", "CI/CD"
+  ],
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Self-Employed (Freelance)"
+  }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0F1E1A;
+    --ink-2:#16281F;
+    --paper:#FBF8F1;
+    --card:#132821;
+    --emerald:#3BB98A;
+    --emerald-dim:#1F8A63;
+    --copper:#D98E4A;
+    --text-hi:#F2F0E6;
+    --text-mid:#A9BBB1;
+    --text-low:#647A6E;
+    --line:rgba(242,240,230,0.10);
+    --font-display:'Fraunces', serif;
+    --font-body:'IBM Plex Sans', sans-serif;
+    --font-mono:'IBM Plex Mono', monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--ink); color:var(--text-hi); font-family:var(--font-body); line-height:1.6; overflow-x:hidden;
+  }
+  @media (prefers-reduced-motion: reduce){ *{animation-duration:.01ms !important; transition-duration:.01ms !important; scroll-behavior:auto !important;} }
+  a{color:inherit; text-decoration:none;}
+  .wrap{max-width:1080px; margin:0 auto; padding:0 28px;}
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible{outline:2px solid var(--emerald); outline-offset:3px;}
+
+  /* NAV */
+  nav{position:fixed; top:0; left:0; right:0; z-index:500; background:rgba(15,30,26,0.82); backdrop-filter:blur(10px); border-bottom:1px solid var(--line);}
+  .nav-inner{max-width:1080px; margin:0 auto; padding:16px 28px; display:flex; align-items:center; justify-content:space-between;}
+  .nav-logo{font-family:var(--font-display); font-weight:700; font-size:19px; letter-spacing:0.2px; display:flex; align-items:center; gap:8px;}
+  .nav-logo .dot{width:7px; height:7px; border-radius:50%; background:var(--emerald); box-shadow:0 0 8px var(--emerald);}
+  .nav-links{display:flex; gap:26px; font-family:var(--font-mono); font-size:12.5px; color:var(--text-mid);}
+  .nav-links a:hover{color:var(--emerald);}
+  .nav-cta{font-family:var(--font-mono); font-size:12px; color:var(--ink); background:var(--emerald); padding:9px 16px; border-radius:3px; font-weight:600;}
+  @media (max-width:800px){ .nav-links{display:none;} }
+
+  /* HERO */
+  header.hero{min-height:100vh; display:flex; align-items:center; padding:110px 0 70px; position:relative;}
+  header.hero::before{
+    content:''; position:absolute; inset:0; z-index:-1;
+    background:
+      radial-gradient(ellipse 60% 50% at 80% 10%, rgba(59,185,138,0.14), transparent),
+      radial-gradient(ellipse 50% 40% at 10% 90%, rgba(217,142,74,0.08), transparent);
+  }
+  .hero-grid{display:grid; grid-template-columns:1.1fr 0.9fr; gap:56px; align-items:center;}
+  @media (max-width:900px){ .hero-grid{grid-template-columns:1fr;} }
+
+  .eyebrow{font-family:var(--font-mono); font-size:12px; color:var(--emerald); letter-spacing:2px; text-transform:uppercase; display:flex; align-items:center; gap:10px; margin-bottom:18px;}
+  .eyebrow .bar{width:26px; height:1px; background:var(--emerald);}
+
+  h1.hero-title{font-family:var(--font-display); font-weight:700; font-size:clamp(36px,5.6vw,60px); line-height:1.06; letter-spacing:-0.5px; margin-bottom:20px;}
+  h1.hero-title .accent{color:var(--emerald);}
+
+  .hero-desc{color:var(--text-mid); font-size:16px; max-width:520px; margin-bottom:32px;}
+  .hero-desc strong{color:var(--text-hi); font-weight:600;}
+
+  .hero-actions{display:flex; gap:14px; flex-wrap:wrap; margin-bottom:40px;}
+  .btn-primary{font-family:var(--font-mono); font-size:13px; font-weight:600; color:var(--ink); background:var(--emerald); padding:14px 22px; border-radius:4px; display:inline-flex; align-items:center; gap:8px; transition:transform .2s;}
+  .btn-primary:hover{transform:translateY(-2px);}
+  .btn-ghost{font-family:var(--font-mono); font-size:13px; font-weight:600; color:var(--text-hi); background:transparent; padding:13px 22px; border-radius:4px; border:1px solid var(--line); transition:border-color .2s, color .2s;}
+  .btn-ghost:hover{border-color:var(--emerald); color:var(--emerald);}
+
+  .hero-stats{display:flex; gap:34px; flex-wrap:wrap;}
+  .hstat .num{font-family:var(--font-display); font-size:25px; font-weight:700; color:var(--emerald);}
+  .hstat .label{font-family:var(--font-mono); font-size:10.5px; color:var(--text-low); letter-spacing:1px; text-transform:uppercase;}
+
+  /* Stack layers signature graphic */
+  .stack-visual{background:var(--card); border:1px solid var(--line); border-radius:10px; padding:26px;}
+  .sv-label{font-family:var(--font-mono); font-size:11px; color:var(--text-low); letter-spacing:1.5px; text-transform:uppercase; margin-bottom:18px;}
+  .layer{border:1px solid var(--line); border-radius:8px; padding:16px 18px; margin-bottom:12px; position:relative; overflow:hidden;}
+  .layer:last-child{margin-bottom:0;}
+  .layer .lname{font-family:var(--font-display); font-weight:600; font-size:16px;}
+  .layer .lrole{font-family:var(--font-mono); font-size:11px; color:var(--text-low); margin-top:3px;}
+  .layer.l1{background:linear-gradient(90deg, rgba(59,185,138,0.14), transparent); border-color:rgba(59,185,138,0.3);}
+  .layer.l2{background:linear-gradient(90deg, rgba(217,142,74,0.12), transparent); border-color:rgba(217,142,74,0.28); margin-left:16px;}
+  .layer.l3{background:linear-gradient(90deg, rgba(59,185,138,0.10), transparent); border-color:var(--line); margin-left:32px;}
+  .layer.l1 .lname{color:var(--emerald);}
+  .layer.l2 .lname{color:var(--copper);}
+
+  /* SECTION shared */
+  section{padding:100px 0; position:relative;}
+  .section-head{margin-bottom:52px; max-width:620px;}
+  h2.section-title{font-family:var(--font-display); font-size:clamp(26px,3.4vw,38px); font-weight:700; letter-spacing:-0.3px;}
+  .section-sub{color:var(--text-mid); margin-top:12px; font-size:15px;}
+
+  .reveal{opacity:0; transform:translateY(22px); transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in{opacity:1; transform:translateY(0);}
+
+  /* STACK grid */
+  #stack{background:var(--ink-2); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+  .stack-grid{display:grid; grid-template-columns:repeat(auto-fill, minmax(220px,1fr)); gap:16px;}
+  .stack-card{background:var(--card); border:1px solid var(--line); border-radius:8px; padding:20px; transition:border-color .25s, transform .25s;}
+  .stack-card:hover{border-color:var(--emerald-dim); transform:translateY(-3px);}
+  .stack-card h3{font-family:var(--font-display); font-size:16px; margin-bottom:8px;}
+  .stack-card p{font-size:12.5px; color:var(--text-mid); font-family:var(--font-mono); line-height:1.75;}
+
+  /* PROJECTS */
+  .proj-grid{display:grid; grid-template-columns:repeat(auto-fill, minmax(300px,1fr)); gap:18px;}
+  .proj-card{background:var(--card); border:1px solid var(--line); border-radius:10px; overflow:hidden; display:flex; flex-direction:column; transition:border-color .25s, transform .25s;}
+  .proj-card:hover{border-color:var(--emerald-dim); transform:translateY(-3px);}
+  .proj-card .proj-body{padding:22px 24px; display:flex; flex-direction:column; flex:1;}
+  .proj-card h3{font-family:var(--font-display); font-size:18px; margin-bottom:8px;}
+  .proj-card p{font-size:13.5px; color:var(--text-mid); flex:1;}
+  .proj-time{font-family:var(--font-mono); font-size:10.5px; color:var(--text-low); margin-top:2px;}
+
+  .proj-thumb{position:relative; width:100%; aspect-ratio:16/10; background:linear-gradient(135deg, rgba(59,185,138,0.16), rgba(217,142,74,0.10)); overflow:hidden;}
+  .proj-thumb img{width:100%; height:100%; object-fit:cover; object-position:top; display:block;}
+  .proj-thumb-fallback{
+    position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+    font-family:var(--font-mono); font-size:11px; color:var(--text-low); letter-spacing:1px; text-transform:uppercase;
+    border:1px dashed var(--line); margin:8px;
+  }
+  .proj-tags{display:flex; flex-wrap:wrap; gap:7px; margin:14px 0;}
+  .tag{font-family:var(--font-mono); font-size:10.5px; color:var(--text-mid); border:1px solid var(--line); padding:3px 8px; border-radius:4px;}
+  .proj-link{display:inline-flex; align-items:center; gap:6px; margin-top:6px; font-family:var(--font-mono); font-size:12px; font-weight:600; color:var(--emerald); border:1px solid var(--emerald-dim); padding:8px 14px; border-radius:5px; width:fit-content; transition:background .2s, color .2s;}
+  .proj-link:hover{background:var(--emerald); color:var(--ink);}
+
+  /* EXPERIENCE timeline */
+  #experience .timeline{position:relative; padding-left:32px; border-left:1px solid var(--line);}
+  .tl-item{position:relative; padding-bottom:40px;}
+  .tl-item:last-child{padding-bottom:0;}
+  .tl-item::before{content:''; position:absolute; left:-38px; top:4px; width:10px; height:10px; border-radius:50%; background:var(--ink); border:2px solid var(--emerald); box-shadow:0 0 10px rgba(59,185,138,0.5);}
+  .tl-time{font-family:var(--font-mono); font-size:11.5px; color:var(--emerald); margin-bottom:6px;}
+  .tl-item h3{font-family:var(--font-display); font-size:19px; margin-bottom:2px;}
+  .tl-item .org{font-family:var(--font-mono); font-size:13px; color:var(--text-mid); margin-bottom:12px;}
+  .tl-item ul{display:flex; flex-direction:column; gap:7px; list-style:none;}
+  .tl-item li{font-size:13.5px; color:var(--text-mid); padding-left:16px; position:relative;}
+  .tl-item li::before{content:'▸'; position:absolute; left:0; color:var(--copper);}
+
+  /* EDUCATION */
+  #education{background:var(--ink-2); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+  .edu-grid{display:grid; grid-template-columns:1.2fr 1fr; gap:36px;}
+  @media (max-width:800px){ .edu-grid{grid-template-columns:1fr;} }
+  .edu-card{background:var(--card); border:1px solid var(--line); border-radius:8px; padding:24px;}
+  .edu-card h3{font-family:var(--font-display); font-size:18px; margin-bottom:6px;}
+  .edu-card .org{font-family:var(--font-mono); font-size:12.5px; color:var(--emerald); margin-bottom:4px;}
+  .edu-card .meta{font-family:var(--font-mono); font-size:12px; color:var(--text-low);}
+  .lang-list{display:flex; flex-direction:column; gap:10px;}
+  .lang-item{display:flex; justify-content:space-between; background:var(--card); border:1px solid var(--line); border-radius:8px; padding:14px 16px; font-family:var(--font-mono); font-size:12.5px;}
+  .lang-item .v{color:var(--text-mid);}
+
+  /* CONTACT */
+  #contact{padding-bottom:60px;}
+  .contact-grid{display:grid; grid-template-columns:0.9fr 1.1fr; gap:46px;}
+  @media (max-width:900px){ .contact-grid{grid-template-columns:1fr;} }
+  .contact-info-list{display:flex; flex-direction:column; gap:14px; margin-top:24px;}
+  .contact-info-item{display:flex; align-items:center; gap:14px; padding:14px 16px; background:var(--card); border:1px solid var(--line); border-radius:8px; transition:border-color .2s;}
+  .contact-info-item:hover{border-color:var(--emerald-dim);}
+  .contact-info-item .ic{color:var(--emerald); flex-shrink:0;}
+  .contact-info-item .txt{font-family:var(--font-mono); font-size:12.5px;}
+  .contact-info-item .txt .lbl{color:var(--text-low); font-size:10.5px; letter-spacing:1px; text-transform:uppercase; display:block; margin-bottom:3px;}
+  .contact-info-item .txt .val{color:var(--text-hi);}
+
+  .form-panel{background:var(--card); border:1px solid var(--line); border-radius:10px; padding:26px;}
+  .field{margin-bottom:16px;}
+  .field label{display:block; font-family:var(--font-mono); font-size:11.5px; color:var(--emerald); margin-bottom:8px;}
+  .field input, .field textarea{width:100%; background:var(--ink); border:1px solid var(--line); border-radius:6px; padding:12px 14px; color:var(--text-hi); font-family:var(--font-body); font-size:14px; transition:border-color .2s;}
+  .field input:focus, .field textarea:focus{outline:none; border-color:var(--emerald);}
+  .field textarea{resize:vertical; min-height:100px;}
+  .submit-row{display:flex; align-items:center; gap:16px; margin-top:20px;}
+  .submit-row .hint{font-family:var(--font-mono); font-size:11px; color:var(--text-low);}
+
+  footer{border-top:1px solid var(--line); padding:28px 0; text-align:center;}
+  footer p{font-family:var(--font-mono); font-size:12px; color:var(--text-low);}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo"><span class="dot"></span>Tonni Akter</div>
+    <div class="nav-links">
+      <a href="#stack">Stack</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a href="#contact" class="nav-cta">Hire Me →</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow"><span class="bar"></span>Available for freelance &amp; full-time</div>
+        <h1 class="hero-title">Full-stack products,<br>built on <span class="accent">React → Express → Mongo.</span></h1>
+        <p class="hero-desc">
+          I'm <strong>Tonni Akter</strong>, a Senior MERN Stack Developer with 4+ years shipping production web
+          applications — from agency sites to fintech and logistics platforms. I own the full path: UI, API,
+          database, and deployment.
+        </p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn-primary">View Projects →</a>
+          <a href="#contact" class="btn-ghost">Get in Touch</a>
+        </div>
+        <div class="hero-stats">
+          <div class="hstat"><div class="num">4+</div><div class="label">Years Experience</div></div>
+          <div class="hstat"><div class="num">10+</div><div class="label">Products Shipped</div></div>
+          <div class="hstat"><div class="num">50%</div><div class="label">Server Speed Gain</div></div>
+        </div>
+      </div>
+
+      <div class="stack-visual reveal">
+        <div class="sv-label">The Stack, In Layers</div>
+        <div class="layer l1">
+          <div class="lname">React / Next.js</div>
+          <div class="lrole">Interface — TypeScript, Tailwind, Redux/Zustand</div>
+        </div>
+        <div class="layer l2">
+          <div class="lname">Node.js / Express</div>
+          <div class="lrole">API — REST &amp; GraphQL, JWT auth, rate limiting</div>
+        </div>
+        <div class="layer l3">
+          <div class="lname">MongoDB</div>
+          <div class="lrole">Data — schema design, indexing, query tuning</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="stack">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow"><span class="bar"></span>Toolkit</div>
+      <h2 class="section-title">What I build with</h2>
+      <p class="section-sub">Chosen for what ships to production, not what looks good on a slide.</p>
+    </div>
+    <div class="stack-grid reveal">
+      <div class="stack-card"><h3>Frontend</h3><p>React.js · Next.js<br>React Native · TypeScript<br>Tailwind CSS · Material UI</p></div>
+      <div class="stack-card"><h3>Backend</h3><p>Node.js · Express.js<br>MongoDB · Mongoose<br>REST &amp; GraphQL APIs</p></div>
+      <div class="stack-card"><h3>Auth &amp; Security</h3><p>JWT · Firebase Auth<br>Rate limiting<br>Secure session handling</p></div>
+      <div class="stack-card"><h3>DevOps</h3><p>Docker<br>CI/CD · GitHub Actions<br>Vercel / Netlify deploys</p></div>
+      <div class="stack-card"><h3>State &amp; Testing</h3><p>Redux · Zustand<br>Jest · Mocha · TDD<br>Webpack · Vite · Babel</p></div>
+      <div class="stack-card"><h3>Process</h3><p>Agile methodologies<br>Code review standards<br>Team collaboration</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow"><span class="bar"></span>Selected Work</div>
+      <h2 class="section-title">Projects shipped to production</h2>
+      <p class="section-sub">A mix of agency, fintech, logistics, and travel platforms — built end to end.</p>
+    </div>
+    <div class="proj-grid reveal">
+
+      <div class="proj-card">
+        <div class="proj-thumb">
+          <img src="images/acnoo.jpg" alt="Acnoo Agency Website screenshot" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="proj-thumb-fallback" style="display:none;">Add Screenshot</div>
+        </div>
+        <div class="proj-body">
+          <h3>Acnoo Agency Website</h3>
+          <div class="proj-time">Jan — Feb 2025 · 2 months</div>
+          <p>Marketing site for a design agency — front-end build with full API integration for dynamic content.</p>
+          <div class="proj-tags"><span class="tag">React</span><span class="tag">API Integration</span></div>
+          <a class="proj-link" href="https://acnoo-v3.vercel.app" target="_blank" rel="noopener">Visit Site ↗</a>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-thumb">
+          <img src="images/dosh-capital.jpg" alt="Dosh Capital screenshot" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="proj-thumb-fallback" style="display:none;">Add Screenshot</div>
+        </div>
+        <div class="proj-body">
+          <h3>Dosh Capital</h3>
+          <div class="proj-time">Mar — Apr 2025 · ~6 weeks</div>
+          <p>Full-stack build for a financial services brand, covering both interface and backend logic.</p>
+          <div class="proj-tags"><span class="tag">Full Stack</span><span class="tag">MERN</span></div>
+          <a class="proj-link" href="https://dosh-capital.netlify.app/" target="_blank" rel="noopener">Visit Site ↗</a>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-thumb">
+          <img src="images/renterpay.jpg" alt="RenterPay screenshot" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="proj-thumb-fallback" style="display:none;">Add Screenshot</div>
+        </div>
+        <div class="proj-body">
+          <h3>RenterPay</h3>
+          <div class="proj-time">May — Jul 2025 · ~3 months</div>
+          <p>Rental payments platform — full-stack development covering payment flows and account management.</p>
+          <div class="proj-tags"><span class="tag">Full Stack</span><span class="tag">Payments</span></div>
+          <a class="proj-link" href="https://renterpay.com.au/" target="_blank" rel="noopener">Visit Site ↗</a>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-thumb">
+          <img src="images/nama-nama.jpg" alt="Nama Nama screenshot" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="proj-thumb-fallback" style="display:none;">Add Screenshot</div>
+        </div>
+        <div class="proj-body">
+          <h3>Nama Nama</h3>
+          <div class="proj-time">Aug 2025 · ~1 month</div>
+          <p>Front-end build focused on a clean, responsive browsing experience.</p>
+          <div class="proj-tags"><span class="tag">Frontend</span><span class="tag">React</span></div>
+          <a class="proj-link" href="https://nama-nama.netlify.app/" target="_blank" rel="noopener">Visit Site ↗</a>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-thumb">
+          <img src="images/tripalgarve.jpg" alt="Tripalgarve screenshot" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="proj-thumb-fallback" style="display:none;">Add Screenshot</div>
+        </div>
+        <div class="proj-body">
+          <h3>Tripalgarve</h3>
+          <div class="proj-time">Sep 2025 · ~1 month</div>
+          <p>Travel &amp; booking site front-end, built for a smooth multi-step browsing and enquiry flow.</p>
+          <div class="proj-tags"><span class="tag">Frontend</span><span class="tag">Travel</span></div>
+          <a class="proj-link" href="https://tripalgarve-en.netlify.app/" target="_blank" rel="noopener">Visit Site ↗</a>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-thumb">
+          <img src="images/sns-logistic.jpg" alt="SNS Logistic screenshot" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="proj-thumb-fallback" style="display:none;">Add Screenshot</div>
+        </div>
+        <div class="proj-body">
+          <h3>SNS Logistic</h3>
+          <div class="proj-time">Oct — Nov 2025 · ~6 weeks</div>
+          <p>Logistics platform with full-stack development for tracking and operational workflows.</p>
+          <div class="proj-tags"><span class="tag">Full Stack</span><span class="tag">Logistics</span></div>
+          <a class="proj-link" href="https://sns-logiostic.vercel.app/" target="_blank" rel="noopener">Visit Site ↗</a>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-thumb">
+          <img src="images/qr-review.jpg" alt="QR Review Code screenshot" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="proj-thumb-fallback" style="display:none;">Add Screenshot</div>
+        </div>
+        <div class="proj-body">
+          <h3>QR Review Code</h3>
+          <div class="proj-time">Dec 2025 · ~3 weeks</div>
+          <p>QR-code driven review collection tool, built with a lightweight full-stack architecture.</p>
+          <div class="proj-tags"><span class="tag">Full Stack</span><span class="tag">Next.js</span></div>
+          <a class="proj-link" href="https://qr-review-code1.vercel.app/" target="_blank" rel="noopener">Visit Site ↗</a>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-thumb">
+          <img src="images/business-consulting.jpg" alt="Business Consulting screenshot" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="proj-thumb-fallback" style="display:none;">Add Screenshot</div>
+        </div>
+        <div class="proj-body">
+          <h3>Business Consulting</h3>
+          <div class="proj-time">Jan — Feb 2026 · ~1 month</div>
+          <p>Corporate consulting site front-end, built on Next.js for performance and SEO.</p>
+          <div class="proj-tags"><span class="tag">Next.js</span><span class="tag">Frontend</span></div>
+          <a class="proj-link" href="https://buisness-consulting-next.vercel.app/" target="_blank" rel="noopener">Visit Site ↗</a>
+        </div>
+      </div>
+
+    </div>
+    <p style="margin-top:18px; font-family:var(--font-mono); font-size:11px; color:var(--text-low);">
+      Timeframes and descriptions above are best-guess placeholders (only Acnoo's 2-month duration was confirmed) — please correct any that don't match reality.
+    </p>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow"><span class="bar"></span>Track Record</div>
+      <h2 class="section-title">Where the experience was earned</h2>
+    </div>
+    <div class="timeline reveal">
+      <div class="tl-item">
+        <div class="tl-time">JAN 2025 — PRESENT</div>
+        <h3>Freelance Full Stack Developer</h3>
+        <div class="org">Self-Employed · Remote</div>
+        <ul>
+          <li>Deliver full-stack web applications for international clients across agency, fintech, logistics, and travel.</li>
+          <li>Own each project end to end — front-end build, API design, database, and deployment.</li>
+          <li>Shipped 8+ client projects, from single-page agency sites to a full rental-payments platform.</li>
+        </ul>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">AUG 2023 — DEC 2024</div>
+        <h3>Full Stack Developer</h3>
+        <div class="org">Opedia Technology</div>
+        <ul>
+          <li>Developed full-stack applications using React.js, Node.js, and MongoDB, delivering robust end-to-end solutions.</li>
+          <li>Improved server response time by 50% through MongoDB query optimization and efficient database design.</li>
+          <li>Implemented secure authentication systems using JWT and Firebase.</li>
+          <li>Migrated projects to Next.js, enhancing SEO and performance for better user engagement.</li>
+        </ul>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">FEB 2021 — JAN 2023</div>
+        <h3>MERN Stack Developer</h3>
+        <div class="org">SahosIT</div>
+        <ul>
+          <li>Built responsive UIs with React.js, Tailwind CSS, and Bootstrap, ensuring cross-browser compatibility.</li>
+          <li>Integrated RESTful APIs for dynamic data rendering and real-time updates.</li>
+          <li>Optimized MongoDB performance with indexing and query optimization.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow"><span class="bar"></span>Credentials</div>
+      <h2 class="section-title">Education &amp; languages</h2>
+    </div>
+    <div class="edu-grid reveal">
+      <div class="edu-card">
+        <h3>B.Sc. in Computer Science</h3>
+        <div class="org">Presidency University</div>
+        <div class="meta">Jan 2019 — Feb 2023</div>
+      </div>
+      <div class="lang-list">
+        <div class="lang-item"><span>English</span><span class="v">Fluent</span></div>
+        <div class="lang-item"><span>Bangla</span><span class="v">Native</span></div>
+        <div class="lang-item"><span>Hindi</span><span class="v">Conversational</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow"><span class="bar"></span>Get In Touch</div>
+      <h2 class="section-title">Let's build something that ships</h2>
+      <p class="section-sub">Open to freelance contracts and full-time MERN roles. Usually replies within a day.</p>
+    </div>
+    <div class="contact-grid reveal">
+      <div>
+        <div class="contact-info-list">
+          <a class="contact-info-item" href="mailto:tonniakterbithi@gmail.com">
+            <span class="ic">✉</span>
+            <span class="txt"><span class="lbl">Email</span><span class="val">tonniakterbithi@gmail.com</span></span>
+          </a>
+          <a class="contact-info-item" href="tel:+8801825332448">
+            <span class="ic">☎</span>
+            <span class="txt"><span class="lbl">Phone</span><span class="val">+880 1825 332448</span></span>
+          </a>
+          <a class="contact-info-item" href="https://github.com/tonni-akter-dev" target="_blank" rel="noopener">
+            <span class="ic">⌥</span>
+            <span class="txt"><span class="lbl">GitHub</span><span class="val">github.com/tonni-akter-dev</span></span>
+          </a>
+          <a class="contact-info-item" href="https://www.linkedin.com/in/tonni-akter-dev/" target="_blank" rel="noopener">
+            <span class="ic">in</span>
+            <span class="txt"><span class="lbl">LinkedIn</span><span class="val">linkedin.com/in/tonni-akter-dev</span></span>
+          </a>
+        </div>
+      </div>
+
+      <div class="form-panel">
+        <form action="https://formsubmit.co/tonniakterbithi@gmail.com" method="POST">
+          <input type="hidden" name="_subject" value="New message from portfolio site">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <div class="field">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name" required>
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="you@company.com" required>
+          </div>
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Tell me about the project or role..." required></textarea>
+          </div>
+          <div class="submit-row">
+            <button type="submit" class="btn-primary" style="border:none; cursor:pointer;">Send Message →</button>
+            <span class="hint">delivered straight to inbox</span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>© <span id="year"></span> Tonni Akter — Senior MERN Stack Developer.</p>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
